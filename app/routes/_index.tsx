@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import { chromium } from 'playwright';
 
 export const meta: MetaFunction = () => {
   return [
@@ -136,3 +137,9 @@ const resources = [
     ),
   },
 ];
+
+export async function action() {
+  if (chromium) {
+    console.log('Chromium available')
+  }
+}
